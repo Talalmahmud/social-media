@@ -1,6 +1,6 @@
 import React from "react";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+// import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
@@ -15,13 +15,15 @@ const Navbar = () => {
     <div className="navbar-section">
       <div className="navbar">
         <div className="left">
-          <h2>Social</h2>
-          <Link>
+          <Link to="/">
+            <h2>Social</h2>
+          </Link>
+          <Link to="/">
             <HomeOutlinedIcon className="nav-icon" />
           </Link>
-          <Link>
+          {/* <Link>
             <DarkModeOutlinedIcon className="nav-icon" />
-          </Link>
+          </Link> */}
           <Link>
             <GridViewOutlinedIcon className="nav-icon" />
           </Link>
@@ -43,10 +45,10 @@ const Navbar = () => {
 
           <div className="profile-nav">
             <Link>
-              <AccountCircleIcon className="nav-icon" />
+              <AccountCircleIcon className="nav-icon"></AccountCircleIcon>
             </Link>
+            <span> Talal Mahmud</span>
           </div>
-          <p>Talal Mahmud</p>
         </div>
       </div>
     </div>

@@ -6,6 +6,9 @@
   &::-webkit-scrollbar {
     display: none;
   }
+  @media screen and (max-width: 768px) {
+    margin-top: 50px;
+  }
   .item {
     width: 600px;
     background-color: #ffff;
@@ -62,12 +65,14 @@
         justify-content: center;
         font-size: 22px;
         color: rgb(75, 87, 197);
+        cursor: pointer;
       }
       .comment-icon {
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 22px;
+        cursor: pointer;
       }
       .share-icon {
         display: flex;
@@ -75,6 +80,7 @@
         justify-content: center;
         font-size: 22px;
         color: rgb(128, 17, 17);
+        cursor: pointer;
       }
     }
     .comment-section {

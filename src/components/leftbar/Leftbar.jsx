@@ -22,7 +22,7 @@ const Leftbar = () => {
       <div className="menu">
         <div className="item">
           <img src={user} alt="" />
-          <Link to="#">User</Link>
+          <Link to="/profile/1">User</Link>
         </div>
         <div className="item">
           <img src={friends} alt="" />

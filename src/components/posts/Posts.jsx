@@ -9,6 +9,8 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import ThumbUpOffAltOutlinedIcon from "@mui/icons-material/ThumbUpOffAltOutlined";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const postDummy = [
   {
@@ -48,6 +50,10 @@ const postDummy = [
   },
 ];
 const Posts = () => {
+  const [showcomment, setShowcomment] = useState(false);
+  const commentHandle = () => {
+    setShowcomment(!showcomment);
+  };
   return (
     <div className="posts">
       {postDummy.map((post, index) => {
@@ -55,7 +61,9 @@ const Posts = () => {
           <div className="item" key={index}>
             <div className="top">
               <div className="left">
-                <img src={post.profilePic} alt="" />
+                <Link to="/profile/1">
+                  <img src={post.profilePic} alt="" />
+                </Link>
                 <div className="user-info">
                   <span>{post.name}</span>
                   <span>12:30pm</span>
@@ -72,17 +80,24 @@ const Posts = () => {
             </div>
             <div className="bottom">
               <ThumbUpOffAltOutlinedIcon className="like-icon" />
-              <ChatOutlinedIcon className="comment-icon" />
+              <ChatOutlinedIcon
+                className="comment-icon"
+                onClick={() => {
+                  commentHandle();
+                }}
+              />
               <ShareOutlinedIcon className="share-icon" />
             </div>
-            <div className="comment-section">
-              <div className="top">
-                <img src={img1} alt="" />
-                <input type="text" placeholder="comments here" />
-                <button>send</button>
+            {showcomment && (
+              <div className="comment-section">
+                <div className="top">
+                  <img src={img1} alt="" />
+                  <input type="text" placeholder="comments here" />
+                  <button>send</button>
+                </div>
+                <div className="bottom"></div>
               </div>
-              <div className="bottom"></div>
-            </div>
+            )}
           </div>
         );
       })}

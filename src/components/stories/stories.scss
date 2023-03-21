@@ -2,12 +2,19 @@
   display: flex;
   gap: 20px;
   height: 250px;
+  @media screen and (max-width: 768px) {
+    height: 80px;
+  }
 
   .story {
     height: 200px;
     position: relative;
     overflow: hidden;
     flex: 1;
+    @media screen and (max-width: 768px) {
+      height: 80px;
+      width: 100px;
+    }
     .stories-btn {
       background-color: rgb(158, 34, 34);
       height: 20px;
