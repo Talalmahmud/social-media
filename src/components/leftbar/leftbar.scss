@@ -1,0 +1,30 @@
+.leftbar {
+  padding: 30px 20px;
+  flex: 2;
+  background-color: #fff;
+  position: sticky;
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+  top: 60px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      a {
+        font-size: 14px;
+      }
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
